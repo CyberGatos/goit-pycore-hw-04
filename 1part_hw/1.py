@@ -1,7 +1,7 @@
 from pathlib import Path
 import re
 
-path = Path("/Users/cyber/Desktop/VS PROJECTS/goit-pycore-hw-04/1part_hw/my specialists.txt")
+path = Path(__file__).parent / "my specialists.txt"
 
 def total_salary(path):
     try:
@@ -12,7 +12,7 @@ def total_salary(path):
                 digit = int("".join(digits))
                 salary_list.append(digit)
             total = sum(salary_list)
-            averege = sum(salary_list) / len(salary_list)
+            averege = total / len(salary_list)
         return total, int(averege)
     except:
         return None
